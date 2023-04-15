@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stdio.h>
+#include<conio.h>
 #include<math.h>
 #include<graphics.h>
 using namespace std;
@@ -20,10 +21,10 @@ void draw_cube(double edge[20][3])
         y=edge[i+1][1]-edge[i+1][2]*(sin(2.3562));
         line(x_+320,240-y_,x+320,240-y);
     }
-    line(320,240,320,25);
-    line(320,240,550,240);
-    line(320,240,150,410);
-    getch();
+    // line(320,240,320,25);
+    // line(320,240,550,240);
+    // line(320,240,150,410);
+    _getch();
     closegraph();
 }
 
@@ -253,14 +254,14 @@ int main()
         std::cout<<"3:==> Rotation \n";
         std::cout<<"4:==> Reflection \n";
         std::cout<<"5:==> Translation \n";
-        std::cout<<"6:==> Perspective Projection \n";
-        std::cout<<"7:==> Exit \n";
+        std::cout<<"6:==> Exit \n";
         std::cout<<" Enter Your Choice :=\n";
         std::cin>>choice;
         switch(choice)
         {
             case 1:
                     draw_cube(edge);
+                    cout<<"I am out of cube. ";
                     break;
 
             case 2:
@@ -279,16 +280,13 @@ int main()
                     translate(edge);
                     break;
 
-            case 6:
-                    perspect(edge);
-                    break;
 
-            case 7:
+            case 6:
                     exit(0);
 
             default:
                     std::cout<<" Press A Valid Key...!!! ";
-                    getch();
+                    _getch();
                     break;
         }
     closegraph();
